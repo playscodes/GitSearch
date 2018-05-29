@@ -1,0 +1,54 @@
+extends layout
+block content
+    div#left
+        h1 GitSearch
+        p#h2 Good luck, #{login}
+        // search form
+        form(method='POST' action='/')
+          div.form-grou
+            //label(for='search') Search:
+            if q
+              input#name.form-control(type='text', placeholder='Search...',value=q, name='search' ,required)
+            else
+              input#name.form-control(type='text', placeholder='Search...', name='search' ,required)
+            input#page.form-control(type="hidden", name="page", value=1)
+            button#go.btn.btn-primary(type='submit') Search
+
+        if max_page && q && current_page
+          form(method='POST' action='/')
+            div.form-group
+              //label(for='search') Search:
+              input#page.form-control(type='range', min=1, max=max_page, value=current_page, name='page',oninput="selected_page.value = page.value")
+              input#q.form-control(type="hidden", name="search", value=q)
+              button#go_page.btn.btn-primary(type='submit') Go
+                  br
+              output#selected_page(name="ageOutputName") #{current_page}
+
+
+        if total_count
+                h3 Total results: #{total_count}
+        div#results_div
+            if items
+                ol#results
+                  each val in items
+                    li(url=val.url)
+                        a(href = val.html_url) #{val.html_url}
+                        p #{val.description}
+                        p LANG: #{val.language} AUTHOR:#{val.owner.login} SCORE: #{val.score}
+                    img(class='addd', src='/images/bookmark_false.png', q=q,
+                    url=val.html_url, lang = val.language, author = val.owner.login, score = val.score,
+                    onclick = 'bookmark($(this));', description =val.description)
+
+block sidebar
+    div#right
+        h3 Bookmarks
+        if bookmarks
+          ul#bookmarks
+            each val in bookmarks
+              li(url=val.url)
+                a(href = val.url ) #{val.url}
+                p #{val.description}
+                p LANG: #{val.lang} AUTHOR: #{val.author} SCORE:#{val.score} SEARCH: #{val.q}
+              img(class='dell', src='/images/bookmark_true.png',
+              url=val.url,
+              onclick = 'bookmark($(this));')

@@ -1,0 +1,110 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('../images/back2.jpg');
+  background-color: black;
+  background-size: cover;
+  overflow: hidden;
+  margin: 0;
+
+}
+
+a {
+  color: #141351;
+    font-style: initial;
+    font-size: larger;
+}
+
+#right a{
+    color: #6cddc9;
+}
+
+img {
+    height: 30px;
+    display: inline-block;
+    opacity: 0.6;
+}
+
+img:hover {
+    opacity: 1;
+}
+
+#name, #page{
+    width: 60%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(000,000,000,0);
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin: 1rem 0.2rem -1rem 1rem;
+}
+
+
+#selected_page{
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: rgba(000,000,000,0);
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    margin: 0rem 0rem 0rem 0rem;
+}
+
+#go, #go_page{
+    width: 10%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    margin: 0rem 0rem 0rem 1rem;
+}
+
+#left{
+    height: 100vh;
+    width: 70%;
+    float: left;
+    background-color: rgba(255,255,255,0.5);
+    background-size: cover;
+    color: black;
+}
+
+
+#right{
+    height: 100vh;
+    width: 30%;
+    float: right;
+    background-color: rgba(000,000,000,0.6);
+    background-size: cover;
+    color: white;
+    overflow-y: scroll;
+}
+
+#results_div{
+    width: 100%;
+    height: 65%;
+    float: bottom;
+    text-decoration-color: white;
+    scroll-padding-bottom: unset;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dell{
+    opacity: 1;
+
+}
+
+h1 {
+  font-size: 2.75rem;
+  margin: 1rem 0 -1rem 1rem;
+}
+#h2 {
+    font-size: 1rem;
+    margin: 1rem -2rem 0 1.8rem;
+    font-style: oblique;
+    /*font-family: ;*/
+}
+h3 {
+    font-size: 1.25rem;
+         margin: 1rem 1rem 0.75rem 1rem;
+}
